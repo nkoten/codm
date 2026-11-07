@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import { Button } from './components/Button.jsx';
 import NKConfig from './pages/NKConfig.jsx';
+import DamascoSkinTracker from './pages/DamascoSkinTracker.jsx';
 
 const Home = () => (
   <div className="p-8">
@@ -29,12 +30,16 @@ function App() {
         <Link to="/" className="hover:text-amber-400 transition-colors">
           Home
         </Link>
+        <Link to="/damascoSkinTracker" className="">
+          get damasco skin
+        </Link>
         <Link to="/config" className="hover:text-sky-400 transition-colors">
           About
         </Link>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/DamascoSkinTracker" element={<DamascoSkinTracker />} />
         <Route path="/config" element={<ConfigPage />} />
       </Routes>
     </HashRouter>

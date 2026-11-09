@@ -4,6 +4,7 @@ import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import { Button } from './components/Button.jsx';
 import NKConfig from './pages/NKConfig.jsx';
 import DamascoSkinTracker from './pages/DamascoSkinTracker.jsx';
+import Linq from './components/Linq.jsx';
 
 const Home = () => (
   <div className="p-8">
@@ -27,15 +28,9 @@ function App() {
   return (
     <HashRouter>
       <nav className="p-4 bg-[var(--ogx-0)] flex gap-4 border-b border-slate-700">
-        <Link to="/" className="hover:text-amber-400 transition-colors">
-          Home
-        </Link>
-        <Link to="/damascoSkinTracker" className="">
-          get damasco skin
-        </Link>
-        <Link to="/config" className="hover:text-sky-400 transition-colors">
-          About
-        </Link>
+        <Linq to="/" text="Home" />
+        <Linq text="Pegar Damasco" to="/DamascoSkinTracker" />
+        <Linq to="/config" text="About" />
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
